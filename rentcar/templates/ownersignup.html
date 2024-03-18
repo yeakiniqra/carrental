@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>Owner Sign Up</title>
+</head>
+<body>
+    <div class="flex w-screen flex-wrap text-slate-800">
+        <div class="relative hidden h-screen select-none flex-col justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-center md:flex md:w-1/2">
+          <div class="mx-auto py-16 px-8 text-white xl:w-[40rem]">
+            <h1 class="text-4xl font-bold" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Welcome to Wheelzy</h1>
+            <p class="mt-4 text-lg" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Join a Community of Trusted Car Owners and Happy Renters.</p>
+            <div class="flex justify-center mt-8">
+              <img class="w-11/12 max-w-lg rounded-lg object-cover" src="https://i.postimg.cc/3wWbTHxj/8867909.jpg" />
+            </div>
+          </div>
+         
+        </div>
+        <div class="flex w-full flex-col md:w-1/2">
+          <div class="flex justify-center pt-4 md:justify-start md:pl-12">
+            <a href="/">   <img class="w-32 h-12" src="https://i.postimg.cc/ncKsNk64/1-copy.png" alt=""> </a>
+          </div>
+          <div class="my-auto mx-auto flex flex-col justify-center px-6 pt-8 md:justify-start lg:w-[28rem]">
+            <p class="text-center text-3xl font-bold md:text-left md:leading-tight">Create your free account</p>
+            <p class="mt-2 text-center font-medium md:text-left">
+              Already using wheelzy?
+              <a href="#" class="whitespace-nowrap font-semibold text-blue-700 underline">Login here</a>
+            </p>
+            
+
+            <form class="flex flex-col items-stretch pt-3 md:pt-8" method="post">
+              {% csrf_token %}
+              <div class="flex flex-col pt-4">
+                  <div class="relative flex overflow-hidden rounded-md border-2 mb-4 transition focus-within:border-blue-600">
+                      <input type="text" id="login-username" name="username" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Enter your Username" />
+                  </div>
+                  <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+                      <input type="tel" id="phone" name="contact_no" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Enter your Contact no" />
+                  </div>
+              </div>
+              <div class="flex flex-col pt-4">
+                  <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+                      <input type="email" id="login-email" name="email" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="Enter your Email" />
+                  </div>
+              </div>
+              <div class="mb-4 flex flex-col pt-4">
+                  <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+                      <input type="password" id="login-password" name="password" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder=" Enter your Password" />
+                  </div>
+              </div>
+              <div class="flex justify-end mb-4">
+                  <div class="block">
+                      <a href="#" class="text-sm font-semibold text-gray-400 hover:text-gray-700 underline ">Forgot your password?</a>
+                  </div>
+              </div>
+              <button type="submit" class="w-full rounded-lg bg-gray-900 px-4 py-2 text-center text-base font-semibold text-white shadow-md ring-gray-500 ring-offset-2 transition focus:ring-2 hover:bg-gray-700">Sign up</button>
+          </form>
+          
+          </div>
+        </div>
+      </div>
+</body>
+</html>

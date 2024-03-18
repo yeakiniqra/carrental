@@ -20,5 +20,7 @@ from rentcar.views import *
 
 urlpatterns = [
     path('', home, name='home'),
+    path('ownersignup/', ownersignup, name = 'ownersignup'),
+    path('ownerprofile/', ownerprofile, name='ownerprofile'),
     path('admin/', admin.site.urls),
 ]
