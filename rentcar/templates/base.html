@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://i.postimg.cc/PJXdr79K/Rent-Car-Logo.png" type="image/x-icon">
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+<body>
+    
+    <div class="sticky top-0 z-50 bg-gray-100 font-sans w-full m-0">
+        <div class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+          <div class="flex items-center justify-between py-4">
+            <div>
+                <a href="/">
+                    <img src="https://i.postimg.cc/ncKsNk64/1-copy.png" alt="" class="w-32 h-12">
+                </a>
+            </div>
+            
+    
+            <div class="hidden sm:flex sm:items-center">
+                <a href="#" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
+                    <span>Become a Renter</span>
+                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+
+                {% if user.is_authenticated %}
+    <a href="{% url 'booking_car' %}" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
+        <span>Book a Ride</span>
+        <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
+    </a>
+{% else %}
+    <!-- Render something else, or nothing if desired -->
+   
+    <span class="text-gray-800 text-sm font-semibold relative mr-6 group hover:text-purple-600">
+        <span class="cursor-pointer" >Book a Ride</span>
+        <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
+    </span>
+{% endif %}
+
+                <a href="#" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
+                    <span>About</span>
+                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+                <a href="#" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 group">
+                    <span>Contact</span>
+                    <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
+                </a>
+            </div>
+            
+            <div class="sm:flex sm:items-center">
+    {% if user.is_authenticated %}
+        <span class="text-gray-800 text-md font-normal mr-4">
+            Welcome, <a href="{% url 'user_profile' %}" class="text-purple-600 font-semibold">{{ user.username }}</a>
+        </span>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-white bg-black rounded-full group focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-gray-700 active:bg-gray-800 active:text-white focus-visible:outline-black">Logout</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}" class="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">Sign in</a>
+        <a href="#" id="signup-modal-btn" class="text-gray-100 text-sm font-semibold border px-4 py-2 rounded-2xl bg-gray-900 hover:text-gray-200 hover:bg-purple-600">Sign up</a>
+    {% endif %}
+</div>
+
+            
+
+            <!-- Modal -->
+            <div id="signup-modal" class="hidden fixed z-10 shadow-lg inset-0 overflow-y-auto backdrop-blur">
+                <div class="flex items-center justify-center min-h-screen">
+                    <div class="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative"> <!-- Set the container as relative -->
+                        <button id="close-modal-btn" class="absolute top-0 right-0 mr-4 mt-4 text-gray-600 hover:text-gray-800 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <h2 class="text-lg font-semibold mb-4" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Sign up as:</h2>
+                        <button id="signup-user-btn" class="block w-full text-left border-b py-2 font-semibold flex items-center justify-start hover:bg-gray-100">
+                            <i class="ri-user-line text-lg mr-2"></i> Sign Up as User
+                        </button>
+                        <button id="signup-owner-btn" class="block w-full text-left py-2 font-semibold flex items-center justify-start hover:bg-gray-100">
+                            <i class="ri-user-settings-line text-lg mr-2"></i>  Sign Up as Owner
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>        
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const signupModal = document.getElementById("signup-modal");
+            const signupModalBtn = document.getElementById("signup-modal-btn");
+            const signupUserBtn = document.getElementById("signup-user-btn");
+            const signupOwnerBtn = document.getElementById("signup-owner-btn");
+            const closeBtn = document.getElementById("close-modal-btn");
+    
+            signupModalBtn.addEventListener("click", function() {
+                signupModal.classList.remove("hidden");
+            });
+
+            closeBtn.addEventListener("click", function() {
+                signupModal.classList.add("hidden");
+            });
+    
+            signupUserBtn.addEventListener("click", function() {
+                window.location.href = "{% url 'signup' %}";
+            });
+    
+            signupOwnerBtn.addEventListener("click", function() {
+                window.location.href = "{% url 'ownersignup' %}";
+            });
+        });
+    </script>
+</body>
+</html>
