@@ -1,4 +1,11 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.sessions.models import Session
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.contrib.auth import logout as django_logout
+from django.contrib import messages
 from .models import Owner
 
 # Create your views here.
@@ -82,3 +89,29 @@ def ownerlogin(request):
             messages.error(request, 'Invalid username.')
 
     return render(request, 'ownerlogin.html')    
+
+
+def signup(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+       
+        user = User.objects.create_user(username=username, email=email, password=password)
+
+        
+        request.session['signup_username'] = username
+        request.session['signup_email'] = email
+        request.session['signup_password'] = password
+
+        
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            
+            auth_login(request, user)
+            messages.success(request, 'You have successfully signed up!')
+            return redirect('login')  
+
+    return render(request, 'signup.html')
