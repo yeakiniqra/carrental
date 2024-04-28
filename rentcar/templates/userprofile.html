@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}
+User Profile
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>User Profile</title>
+</head>
+<body>
+    {% block content %}
+   
+    <div class="bg-gray-100 min-h-screen">
+        <!-- User Profile Section -->
+        <div class="container mx-auto py-8">
+            <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex flex-col items-center">
+                    <img src="https://i.postimg.cc/y6TCzGF4/User-Profile-PNG-Image.png" alt="User Profile" class="w-38 h-32 bg-gray-300 rounded-full mb-4">
+                    <h1 class="text-xl font-bold">{{ user.username }}</h1>
+                    <p class="text-gray-700">{{ user.email }}</p>
+                    <div class="mt-6 flex flex-wrap gap-4 justify-center">
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Contact</a>
+                        <a href="#" class="bg-gray-300 hover:bg-gray-400 text-gray-700 py-2 px-4 rounded">Edit Profile</a>
+                    </div>
+                </div>
+                <hr class="my-6 border-t border-gray-300">
+                <div class="flex flex-col">
+                    <span class="text-gray-700 uppercase font-bold tracking-wider mb-2">Info</span>
+                    <ul>
+                        <li class="mb-2 font-bold">Joined date: <span class="font-medium">{{ user.date_joined }}</span></li>
+                        <li class="mb-2 font-bold">Contact: <span class="font-medium">01785939572</span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Bookings Section -->
+        <div class="container mx-auto py-8">
+            <div class="text-center">
+                <h2 class="text-xl font-bold mb-4">MY BOOKINGS</h2>
+            </div>
+            <hr class="my-6 border-t border-gray-300">
+            <!-- Bookings List (Horizontal Cards) -->
+            <div class="flex flex-wrap justify-center gap-4">
+                {% if bookings %}
+                    {% for booking in bookings %}
+                        <div class="w-64 bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="border-b-2 border-gray-200 px-6 py-4">
+                                <h5 class="text-gray-800">Booking ID: {{ booking.id }}</h5>
+                            </div>
+                            <div class="p-6">
+                                <h5 class="text-lg font-semibold text-gray-800">Car Name: <span class="text-violet-700"> {{ booking.car.car_name }}</span></h5>
+                                <p class="font-semibold text-gray-600">Location: <span class="text-base">{{ booking.location }}</span></p>
+                                <p class="font-semibold  text-gray-600">Pickup Date: <span class="text-base">{{ booking.pickup_date }}</span> </p>
+                                <p class="font-semibold  text-gray-600">Return Date: <span class="text-base">{{ booking.return_date }}</span></p>
+                                <p class="font-semibold  text-gray-600">Total Price: <span class="text-base"> ${{ booking.total_price }}</span></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-gray-500">No bookings found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    {% endblock %}
+</body>
+</html>
