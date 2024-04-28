@@ -138,6 +138,15 @@ def login(request):
     return render(request, 'login.html')
 
 
+
+@login_required
+def user_profile(request):
+    
+    bookings = Booking.objects.filter(user=request.user)
+
+    return render(request, 'userprofile.html', {'bookings': bookings})
+
+
 def logout(request):
     django_logout(request)
     return redirect('home')
