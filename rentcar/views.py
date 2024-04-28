@@ -1,4 +1,11 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.sessions.models import Session
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+from django.contrib.auth import logout as django_logout
+from django.contrib import messages
 from .models import Owner
 
 # Create your views here.
@@ -81,22 +88,4 @@ def ownerlogin(request):
             
             messages.error(request, 'Invalid username.')
 
-    return render(request, 'ownerlogin.html') 
-
-def owner_profile(request):
-    owner_username = request.session.get('owner_username')
-    owner_contact_no = request.session.get('owner_contact_no')
-    owner_email = request.session.get('owner_email')
-    owner_password = request.session.get('owner_password')
-    
-    if owner_username and owner_contact_no and owner_email:
-        context = {
-            'owner_username': owner_username,
-            'owner_contact_no': owner_contact_no,
-            'owner_email': owner_email,
-            'owner_password': owner_password 
-        }
-        return render(request, 'ownerprofile.html', context)
-    else:
-        
-        return HttpResponse('Please Log in first.')
+    return render(request, 'ownerlogin.html')    
