@@ -20,6 +20,9 @@ from rentcar.views import *
 
 urlpatterns = [
     path('', home, name='home'),
+    path('login/', login, name='login'),
+    path('logout/', logout, name='logout'),
+    path('signup/', signup, name='signup'),
     path('ownersignup/', ownersignup, name = 'ownersignup'),
     path('ownerprofile/', ownerprofile, name='ownerprofile'),
     path('admin/', admin.site.urls),
