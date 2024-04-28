@@ -88,4 +88,9 @@ def ownerlogin(request):
             
             messages.error(request, 'Invalid username.')
 
-    return render(request, 'ownerlogin.html')    
+    return render(request, 'ownerlogin.html') 
+
+def ownerlogout(request):
+    if 'owner_username' in request.session:
+        del request.session['owner_username']
+    return redirect('home')   
