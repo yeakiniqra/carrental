@@ -136,3 +136,8 @@ def login(request):
             return redirect('login')
 
     return render(request, 'login.html')
+
+
+def logout(request):
+    django_logout(request)
+    return redirect('home') 
