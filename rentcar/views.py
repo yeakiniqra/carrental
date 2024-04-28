@@ -53,3 +53,31 @@ def owner_profile(request):
     else:
         
         return HttpResponse('Please Log in first.')
+    
+def ownerlogin(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        
+        if Owner.objects.filter(username=username).exists():
+            owner = Owner.objects.get(username=username)
+            if owner.password == password:
+                
+                
+                request.session['owner_username'] = owner.username
+                request.session['owner_contact_no'] = owner.contact_no
+                request.session['owner_email'] = owner.email
+                request.session['owner_password'] = owner.password
+                
+                
+                return redirect('owner_profile')
+            else:
+                
+                messages.error(request, 'Invalid password.')
+                return redirect('ownerlogin')
+        else:
+            
+            messages.error(request, 'Invalid username.')
+
+    return render(request, 'ownerlogin.html')    
