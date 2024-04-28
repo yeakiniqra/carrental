@@ -28,5 +28,7 @@ urlpatterns = [
     path('ownerprofile/', ownerprofile, name='ownerprofile'),
     path('ownerlogin/', ownerlogin, name='ownerlogin'),
     path('ownerlogout/', ownerlogout, name='ownerlogout'),
+    path('booking_car/', booking_car, name='booking_car'),
+
     path('admin/', admin.site.urls),
 ]
