@@ -115,3 +115,24 @@ def signup(request):
             return redirect('login')  
 
     return render(request, 'signup.html')
+
+
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+       
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            auth_login(request, user)
+            messages.success(request, 'You have successfully logged in!')
+            return redirect('booking_car')  
+         
+        else:
+            
+            messages.error(request, 'Invalid username or password.')
+            return redirect('login')
+
+    return render(request, 'login.html')
