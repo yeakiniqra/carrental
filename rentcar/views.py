@@ -88,7 +88,7 @@ def ownerlogin(request):
             
             messages.error(request, 'Invalid username.')
 
-    return render(request, 'ownerlogin.html')    
+    return render(request, 'ownerlogin.html') 
 
 
 def signup(request):
@@ -141,12 +141,3 @@ def login(request):
 def logout(request):
     django_logout(request)
     return redirect('home') 
-
-
-
-@login_required
-def user_profile(request):
-    
-    bookings = Booking.objects.filter(user=request.user)
-
-    return render(request, 'userprofile.html', {'bookings': bookings})
