@@ -25,5 +25,7 @@ urlpatterns = [
     path('signup/', signup, name='signup'),
     path('ownersignup/', ownersignup, name = 'ownersignup'),
     path('ownerprofile/', ownerprofile, name='ownerprofile'),
+    path('ownerlogin/', ownerlogin, name='ownerlogin'),
+    path('ownerlogout/', ownerlogout, name='ownerlogout'),
     path('admin/', admin.site.urls),
 ]
