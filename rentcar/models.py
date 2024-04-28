@@ -36,3 +36,15 @@ class UploadCar(models.Model):
 
     def __str__(self):
         return self.car_name       
+    
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='bookings')
+    car = models.ForeignKey(UploadCar, on_delete=models.CASCADE)
+    location = models.CharField(max_length=100)
+    pickup_date = models.DateField()
+    return_date = models.DateField()
+    total_price = models.IntegerField()
+
+
+    def __str__(self):
+        return self.user.username        
