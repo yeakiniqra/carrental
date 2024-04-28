@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.contrib.auth import logout as django_logout
 from django.contrib import messages
 from .models import Owner
+from datetime import datetime
 
 # Create your views here.
 def home(request):
@@ -150,5 +151,44 @@ def user_profile(request):
 def logout(request):
     django_logout(request)
     return redirect('home')
+
+def booking_car(request):
+    if request.method == 'POST':
+        location = request.POST.get('location', '')
+        pickup_date = request.POST.get('pickup-date', '')
+        return_date = request.POST.get('return-date', '')
+
+        if location and pickup_date and return_date:
+            
+            pickup_date_dt = datetime.strptime(pickup_date, '%Y-%m-%dT%H:%M')
+            return_date_dt = datetime.strptime(return_date, '%Y-%m-%dT%H:%M')
+
+            
+            available_cars = []
+            booked_cars = Booking.objects.filter(
+                pickup_date__lte=return_date_dt,
+                return_date__gte=pickup_date_dt
+            ).values_list('car_id', flat=True)
+
+            for car in UploadCar.objects.all():
+                if car.id not in booked_cars:
+                    
+                    days = (return_date_dt - pickup_date_dt).days
+                    total_price = car.PricePerDay * days
+                    car.total_price = total_price
+                    available_cars.append(car)
+
+            context = {
+                'cars': available_cars,
+                'location': location,
+                'pickup_date': pickup_date,
+                'return_date': return_date,
+            }
+            return render(request, 'bookingcar.html', context)
+        else:
+            error_message = "Please fill up the form completely"
+            return render(request, 'bookingcar.html', {'error_message': error_message})
+    else:
+        return render(request, 'bookingcar.html')
 
 
