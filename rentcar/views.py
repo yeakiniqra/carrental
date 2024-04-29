@@ -278,4 +278,21 @@ def delete_car(request, car_id):
     
     return render(request, 'delete_car.html', {'car': car})
 
+def owner_cars(request):
+    
+    if 'owner_username' in request.session:
+        owner_username = request.session['owner_username']
+        
+       
+        owner = get_object_or_404(Owner, username=owner_username)
+
+        
+        cars = UploadCar.objects.filter(owner=owner)
+
+        context = {
+            'owner': owner,
+            'cars': cars
+        }
+
+        return render(request, 'nowrunning.html', context)
 
