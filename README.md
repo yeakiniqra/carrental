@@ -1,3 +1,7 @@
+#Wheelzy - Car Rental Website
+
+Welcome to Wheelzy, your one-stop destination for renting cars hassle-free! Whether you're a user looking to rent a car for your next adventure or a car owner seeking to earn extra income by listing your vehicles, Wheelzy has got you covered. With intuitive features and seamless user experience, renting and listing cars has never been easier.
+
 <h2>Features</h2>
 
 <h3>For Users</h3>
@@ -11,7 +15,7 @@
     <li>Contact Page: An active contact page allows users to send messages to the site admin for inquiries or assistance.</li>
 </ul>
 
-<h3>For Car Owners/Dealers</h3>
+<h3>For Car Owners</h3>
 <ul>
     <li>Owner Authentication: Car owners/dealers can login to their dedicated panel.</li>
     <li>Car Listing Management: Owners can add, update, and delete their listed cars for rent.</li>
