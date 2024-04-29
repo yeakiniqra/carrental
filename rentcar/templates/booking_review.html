@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}
+Review Booking
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Review Booking</title>
+</head>
+<body>
+  {% block content %}
+
+  <div class="m-4">
+    <h1 class="text-3xl font-semibold mb-4 mt-4 text-center"
+      style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Booking Review</h1>
+    <hr>
+    <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Rent Details:</h3>
+        <p class="mb-2 text-lg font-semibold">Pickup Date:<span class="text-green-900">{{ pickup_date }}</span> </p>
+        <p class="mb-2 text-lg font-semibold">Return Date:<span class="text-green-900"> {{ return_date }}</span></p>
+        <p class="mb-2 text-lg font-semibold">Pickup & Return Location:<span class="text-green-900"> {{ location }}</span></p>
+    </div>
+    <div class="mt-4 mb-4 text-lg font-bold bg-red-100 p-4 rounded shadow-md">
+      Total Price: ${{ total_price }}
+    </div>
+
+    <div class="flex items-center bg-white rounded-lg shadow-md p-6">
+    <div class="w-1/4 mr-4">
+        <h3 class="text-xl font-bold" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Selected Vehicle:</h3>
+        <img src="{{ car.car_image.url }}" alt="{{ car.car_name }}" class="w-full mt-2 hover:transform hover:scale-110 transition duration-300 ease-in-out">
+    </div>
+    <div>
+      <h2 class="text-2xl font-semibold text-purple-800">{{ car.car_name }}</h2>
+      <p><i class="ri-road-map-line text-gray-500 text-lg"></i> Mileage: {{ car.mileage }}</p>
+      <p><i class="ri-user-follow-line text-gray-500 text-lg"></i> Capacity: {{ car.capacity }}</p>
+      <p><i class="ri-car-line text-gray-500 text-lg"></i> Car Type: {{ car.car_type }}</p>
+      <p><i class="ri-money-dollar-circle-line text-gray-500 text-lg"></i> Price Per Day: {{ car.PricePerDay }}$</p>
+      <p><i class="ri-car-washing-line text-gray-500 text-lg"></i> Car Condition: {{ car.car_condition }}</p>
+
+    </div>
+</div>
+
+   
+   
+    <div class="flex justify-center mt-6">
+      <a href="{% url 'booking_car' %}" class="bg-black text-white font-bold py-2 px-4 rounded-xl shadow-md mr-4 hover:bg-gray-900 hover:text-white hover:border-black border border-transparent">Edit Booking</a>
+      <a href="{% url 'checkout' car_id=car.id location=location pickup_date=pickup_date return_date=return_date %}" class="bg-black text-white font-bold py-2 px-4 rounded-xl shadow-md hover:bg-gray-900 hover:text-white hover:border-black border border-transparent">Continue to Checkout</a>
+  </div>
+  
+  
+</div>
+
+  {% endblock %}
+</body>
+</html>
