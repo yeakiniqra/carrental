@@ -9,6 +9,9 @@ from django.contrib import messages
 from .models import Owner, UploadCar, Booking
 from datetime import datetime
 from django.shortcuts import get_object_or_404
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
 
 # Create your views here.
 def home(request):
@@ -267,6 +270,28 @@ def upload_car(request):
             'car_type_choices': car_type_choices,
         }
     return render(request, 'uploadcar.html', context)
+
+def update_car(request, car_id):
+    car = get_object_or_404(UploadCar, id=car_id)
+    
+    if request.method == 'POST':
+        
+        car.car_name = request.POST.get('carName')
+        car.car_no = request.POST.get('carNumber')
+        car.mileage = request.POST.get('mileage')
+        car.capacity = request.POST.get('capacity')
+        car.car_type = request.POST.get('carType')
+        car.car_condition = request.POST.get('carCondition')
+        car.PricePerDay = request.POST.get('pricePerDay')
+        
+        
+        if 'carImage' in request.FILES:
+            car.car_image = request.FILES['carImage']
+        
+        car.save()  
+        return redirect('listed_car', car_id=car_id) 
+    
+    return render(request, 'updatecar.html', {'car': car})
 
 def delete_car(request, car_id):
     car = get_object_or_404(UploadCar, id=car_id)
