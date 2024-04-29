@@ -1,0 +1,61 @@
+{% extends "sidebar.html" %}
+{% block title %}
+Update Car Information
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Car</title>
+</head>
+<body>
+    {% block content %}
+    <div class="max-w-md mx-auto mt-8 px-4">
+        <h2 class="text-2xl font-bold mb-4">Edit Car Details</h2>
+        <form method="post" enctype="multipart/form-data" class="space-y-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6">
+            {% csrf_token %}
+            <div>
+                <label for="carName" class="block text-sm font-medium text-gray-700">Car Name:</label>
+                <input type="text" id="carName" name="carName" value="{{ car.car_name }}" class="mt-1 block text-lg w-full py-2 px-2 border-gray-800 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="carNumber" class="block text-sm font-medium text-gray-700">Car Number:</label>
+                <input type="text" id="carNumber" name="carNumber" value="{{ car.car_no }}" class="mt-1 block w-full py-2 px-2  border-gray-300 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="mileage" class="block text-sm font-medium text-gray-700">Mileage:</label>
+                <input type="text" id="mileage" name="mileage" value="{{ car.mileage }}" class="mt-1 block w-full py-2 px-2  border-gray-300 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="capacity" class="block text-sm font-medium text-gray-700">Capacity:</label>
+                <input type="text" id="capacity" name="capacity" value="{{ car.capacity }}" class="mt-1 block w-full py-2 px-2 border-gray-300 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="carType" class="block text-sm font-medium text-gray-700">Car Type:</label>
+                <input type="text" id="carType" name="carType" value="{{ car.car_type }}" class="mt-1 block w-full py-2 px-2  border-gray-300 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="carCondition" class="block text-sm font-medium text-gray-700">Car Condition:</label>
+                <input type="text" id="carCondition" name="carCondition" value="{{ car.car_condition }}" class="mt-1 block w-full py-2 px-2  border-gray-300 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="pricePerDay" class="block text-sm font-medium text-gray-700">Price Per Day:</label>
+                <input type="text" id="pricePerDay" name="pricePerDay" value="{{ car.PricePerDay }}" class="mt-1 block w-full py-2 px-2  border-gray-300 bg-gray-200 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="carImage" class="block text-sm font-medium text-gray-700">Car Image:</label>
+                <input type="file" id="carImage" name="carImage" class="w-full text-black text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded">
+            </div>
+            <div class="col-span-2 flex justify-center">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    {% endblock %}
+</body>
+</html>
