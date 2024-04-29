@@ -218,4 +218,53 @@ def booking_review(request, car_id, location, pickup_date, return_date):
     }
     return render(request, 'booking_review.html', context)
 
+def upload_car(request):
+    if request.method == 'POST':
+        
+        car_name = request.POST.get('carName')
+        car_no = request.POST.get('carNumber')
+        mileage = request.POST.get('mileage')
+        capacity = request.POST.get('capacity') 
+        car_type = request.POST.get('carType')  
+        car_condition = request.POST.get('carCondition')
+        PricePerDay = request.POST.get('pricePerDay')
+        car_image = request.FILES.get('carImage')  
+
+        
+        for owner in Owner.objects.all():
+            if owner.username == request.user.username:
+                break
+       
+        
+        
+        
+               
+        
+        new_car = UploadCar(
+            owner=owner,  
+            car_name=car_name,
+            car_no=car_no,
+            mileage=mileage,
+            capacity=capacity,
+            car_type=car_type,
+            car_condition=car_condition,
+            PricePerDay=PricePerDay,
+            car_image=car_image  
+        )
+        new_car.save()
+
+        
+        messages.success(request, 'Car uploaded successfully.')
+        return redirect('listed_car',car_id=new_car.id)  
+
+    else:
+        capacity_choices = UploadCar.CAPACITY_CHOICES
+        car_type_choices = UploadCar.CAR_TYPE_CHOICES
+
+        context = {
+            'capacity_choices': capacity_choices,
+            'car_type_choices': car_type_choices,
+        }
+    return render(request, 'uploadcar.html', context)
+
 
