@@ -26,10 +26,47 @@
 <hr>
 <h2>Built With</h2>
 <ul>
-    <li><img src="https://img.icons8.com/color/48/000000/python.png"/> Python 3.12.3</li>
-    <li><img src="https://img.icons8.com/color/48/000000/django.png"/> Django 5.0.4</li>
-    <li><img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/> Vscode</li>
-    <li><img src="https://img.icons8.com/color/48/000000/html-5.png"/> HTML 5</li>
+    <li><img src="https://img.icons8.com/color/48/000000/python.png"/></li>
+    <li><img src="https://img.icons8.com/color/48/000000/django.png"/></li>
+    <li><img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/></li>
+    <li><img src="https://img.icons8.com/color/48/000000/html-5.png"/></li>
+    <li><img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="Tailwind CSS"></li>
 </ul>
+
+<h2>Installation</h2>
+<ol>
+    <li>Clone the repository:</li>
+</ol>
+
+<pre><code>git clone https://github.com/your-username/wheelzy.git</code></pre>
+
+<ol start="2">
+    <li>Navigate to the project directory:</li>
+</ol>
+
+<pre><code>cd wheelzy</code></pre>
+
+<ol start="3">
+    <li>Install dependencies:</li>
+</ol>
+
+<pre><code>pip install -r requirements.txt</code></pre>
+
+<ol start="4">
+    <li>Apply migrations:</li>
+</ol>
+
+<pre><code>python manage.py migrate</code></pre>
+
+<ol start="5">
+    <li>Run the development server:</li>
+</ol>
+
+<pre><code>python manage.py runserver</code></pre>
+
+<ol start="6">
+    <li>Access the website at <code>http://localhost:8000</code> in your browser.</li>
+</ol>
+
 
 
