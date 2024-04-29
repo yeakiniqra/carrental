@@ -333,6 +333,52 @@ def checkout(request, car_id, location, pickup_date, return_date):
     return render(request, 'checkout.html', context)
 
 
+def generate_pdf(request, car_id, location, pickup_date, return_date):
+    
+    car = UploadCar.objects.get(pk=car_id)
+
+    
+    user = request.user
+
+    
+    pickup_date_dt = datetime.strptime(pickup_date, '%Y-%m-%dT%H:%M')
+    return_date_dt = datetime.strptime(return_date, '%Y-%m-%dT%H:%M')
+
+    
+    days = (return_date_dt - pickup_date_dt).days
+
+    
+    total_price = car.PricePerDay * days
+
+    
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'attachment; filename="Booking Receipt.pdf"'
+
+    
+    p = canvas.Canvas(response, pagesize=letter)
+
+    
+    p.setFont("Helvetica", 12)
+
+    
+    p.drawString(100, 770, "Receipt for Car Booking")
+    p.drawString(100, 750, f"Rented Car: {car.car_name}")
+    p.drawString(100, 730, f"Pickup & Return Location: {location}")
+    p.drawString(100, 710, f"Pickup Date: {pickup_date_dt.strftime('%d-%m-%Y %H:%M')}")
+    p.drawString(100, 690, f"Return Date: {return_date_dt.strftime('%d-%m-%Y %H:%M')}")
+    p.drawString(100, 670, f"Total Price: ${total_price}")
+    p.drawString(100, 650, f"User Name: {user.username}")
+    p.drawString(100, 630, f"User Email: {user.email}")
+
+
+    
+    p.showPage()
+    p.save()
+
+    
+    return response 
+
+
 def listed_car(request, car_id):
     car = get_object_or_404(UploadCar, id=car_id)
     return render(request, 'listedcars.html', {'car': car})
