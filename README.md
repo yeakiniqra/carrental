@@ -26,10 +26,10 @@
 <hr>
 <h2>Built With</h2>
 <p>
-    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"> Python 3.12.3 <br>
-    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> Django 5.0.4 <br>
-    <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode"> VSCode <br>
-    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> HTML 5 <br>
+    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"> <br>
+    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> <br>
+    <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode"> <br>
+    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> <br>
 </p>
 
 <h2>Installation</h2>
@@ -79,6 +79,12 @@
 ![wheelzy5](https://github.com/yeakiniqra/carrental/assets/108855634/66eb6b9a-f6fa-44f3-bd0c-09114a720bb9)
 
 
+<h2>Developed by</h2>
+<ul>
+    <li><strong>Nazmul Yeakin Iqra</strong>, CSE, UAP</li>
+    <li><strong>Naimul Islam</strong>, CSE, UAP</li>
+    <li><strong>Maruf Ahammed</strong>, CSE, UAP</li>
+</ul>
 
 
 
