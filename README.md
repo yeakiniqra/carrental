@@ -1,6 +1,7 @@
-#Wheelzy - Car Rental Website
+<h1>Wheelzy - Car Rental Website</h1>
+<hr>
+<p>Welcome to Wheelzy, your one-stop destination for renting cars hassle-free! Whether you're a user looking to rent a car for your next adventure or a car owner seeking to earn extra income by listing your vehicles, Wheelzy has got you covered. With intuitive features and seamless user experience, renting and listing cars has never been easier.</p>
 
-Welcome to Wheelzy, your one-stop destination for renting cars hassle-free! Whether you're a user looking to rent a car for your next adventure or a car owner seeking to earn extra income by listing your vehicles, Wheelzy has got you covered. With intuitive features and seamless user experience, renting and listing cars has never been easier.
 
 <h2>Features</h2>
 
