@@ -34,6 +34,8 @@ urlpatterns = [
     path('booking_car/', booking_car, name='booking_car'),
     path('booking_review/<int:car_id>/<str:location>/<str:pickup_date>/<str:return_date>/', booking_review, name='booking_review'),
     path('upload_car/', upload_car, name='upload_car'),
+    path('delete-car/<int:car_id>/', delete_car, name='delete_car'),
+    path('owner_cars/', owner_cars, name='owner_cars'),
     path('admin/', admin.site.urls),
 
 ]
