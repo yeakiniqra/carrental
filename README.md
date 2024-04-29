@@ -23,4 +23,13 @@
     <li>Availability Check: Owners can check the availability of their listed cars.</li>
     <li>Profile Management: Owners can manage their profiles and view their rental history.</li>
 </ul>
+<hr>
+<h2>Built With</h2>
+<ul>
+    <li><img src="https://img.icons8.com/color/48/000000/python.png"/> Python 3.12.3</li>
+    <li><img src="https://img.icons8.com/color/48/000000/django.png"/> Django 5.0.4</li>
+    <li><img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/> Vscode</li>
+    <li><img src="https://img.icons8.com/color/48/000000/html-5.png"/> HTML 5</li>
+</ul>
+
 
