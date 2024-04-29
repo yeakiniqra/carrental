@@ -40,7 +40,7 @@ urlpatterns = [
     path('delete-car/<int:car_id>/', delete_car, name='delete_car'),
     path('listed_car/<int:car_id>/', listed_car , name='listed_car'),
     path('owner_cars/', owner_cars, name='owner_cars'),
-    
+    path('send_message/', send_message, name='send_message'),
     path('contact_page/', contact_page, name='contact_page'),
     path('success_page/', success_page, name='success_page'),
     path('about/', about, name='about'),
