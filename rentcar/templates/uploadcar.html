@@ -1,0 +1,133 @@
+{% extends "sidebar.html" %}
+{% block title %}
+Upload Car
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Car</title>
+</head>
+
+<body>
+    {% block content %}
+
+    <div class="container mx-auto py-8">
+        <h1 class="text-2xl font-semibold mb-2 text-center">Add New Car</h1>
+        <hr class="mb-2">
+        <form class=" mx-auto bg-white rounded px-8 pt-6 pb-8 mb-4" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Car Name -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carName">
+                        Car Name
+                    </label>
+                    <input
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="carName" type="text" name="carName" placeholder="Car Name">
+                </div>
+                <!-- Car Number -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carNumber">
+                        Car Number
+                    </label>
+                    <input
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="carNumber" type="text" name="carNumber" placeholder="Car Number">
+                </div>
+                <!-- Mileage -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="mileage">
+                        Mileage
+                    </label>
+                    <input
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="mileage" type="text" name="mileage" placeholder="Mileage">
+                </div>
+                <!-- Capacity -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="capacity">
+                        Capacity
+                    </label>
+                    <select
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="capacity" name="capacity">
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                    
+                </div>
+                <!-- Car Type -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carType">
+                        Car Type
+                    </label>
+                    <select
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="carType" name="carType">
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="hatchback">Hatchback</option>
+                    </select>
+                </div>
+                <!-- Car Condition -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carCondition">
+                        Car Condition
+                    </label>
+                    <input
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="carCondition" name="carCondition" type="text" placeholder="Car Condition">
+                </div>
+                <!-- Price per day -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="pricePerDay">
+                        Price per day
+                    </label>
+                    <input
+                        class="shadow appearance-none border border-slate-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-offset-0 outline-cyan-500 focus:shadow-outline"
+                        id="pricePerDay" name="pricePerDay" type="text" placeholder="Price per day">
+                </div>
+                <!-- Car Image -->
+                <div class="col-span-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carImage">
+                        Upload Car Image
+                    </label>
+                    <!-- <input type="file" id="carImage" name="carImage" accept="image/*"
+                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> -->
+                    <input type="file" id="carImage" name="carImage" accept="image/*"
+                        class="w-full text-black text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-2.5 file:px-4 file:mr-4 file:bg-gray-800 file:hover:bg-gray-700 file:text-white rounded" />
+                </div>
+
+                <!-- Upload Car Button -->
+                <div class="col-span-2">
+                    <button
+                    class="bg-gray-800 hover:bg-gray-900 mt-4 text-white text-sm px-4 py-2.5 outline-none rounded w-max cursor-pointer mx-auto block font-[sans-serif]" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 mr-2 fill-white inline" viewBox="0 0 32 32">
+                        <path
+                          d="M23.75 11.044a7.99 7.99 0 0 0-15.5-.009A8 8 0 0 0 9 27h3a1 1 0 0 0 0-2H9a6 6 0 0 1-.035-12 1.038 1.038 0 0 0 1.1-.854 5.991 5.991 0 0 1 11.862 0A1.08 1.08 0 0 0 23 13a6 6 0 0 1 0 12h-3a1 1 0 0 0 0 2h3a8 8 0 0 0 .75-15.956z"
+                          data-original="#000000" />
+                        <path
+                          d="M20.293 19.707a1 1 0 0 0 1.414-1.414l-5-5a1 1 0 0 0-1.414 0l-5 5a1 1 0 0 0 1.414 1.414L15 16.414V29a1 1 0 0 0 2 0V16.414z"
+                          data-original="#000000" />
+                      </svg>
+                        Upload Now
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    {% endblock %}
+</body>
+
+</html>

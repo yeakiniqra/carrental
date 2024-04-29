@@ -24,15 +24,16 @@
     <li>Profile Management: Owners can manage their profiles and view their rental history.</li>
 </ul>
 <hr>
-<h2>Built With</h2>
+<h2>Made With</h2>
 <p>
-    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"> <br>
-    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> <br>
-    <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode"> <br>
-    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> <br>
+    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"> 
+    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> 
+    <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode">
+    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> 
+    <img src="![alt text](image.png)> 
 </p>
 
-<h2>Installation</h2>
+<h2>⚙️ Installation</h2>
 <ol>
     <li>Clone the repository:</li>
 </ol>

@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.sessions.models import Session
@@ -7,8 +7,8 @@ from django.http import HttpResponse
 from django.contrib.auth import logout as django_logout
 from django.contrib import messages
 from .models import Owner, UploadCar, Booking, ContactMessage
-from datetime import datetime
 from django.shortcuts import get_object_or_404
+from datetime import datetime
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from django.core.mail import send_mail

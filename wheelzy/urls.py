@@ -34,11 +34,13 @@ urlpatterns = [
     path('booking_car/', booking_car, name='booking_car'),
     path('checkout/<int:car_id>/<str:location>/<str:pickup_date>/<str:return_date>/', checkout, name='checkout'),
     path('booking_review/<int:car_id>/<str:location>/<str:pickup_date>/<str:return_date>/', booking_review, name='booking_review'),
+    path('generate_pdf/<int:car_id>/<str:location>/<str:pickup_date>/<str:return_date>/', generate_pdf, name='generate_pdf'),
     path('upload_car/', upload_car, name='upload_car'),
     path('update-car/<int:car_id>/', update_car, name='update_car'),
     path('delete-car/<int:car_id>/', delete_car, name='delete_car'),
     path('listed_car/<int:car_id>/', listed_car , name='listed_car'),
     path('owner_cars/', owner_cars, name='owner_cars'),
+    
     path('contact_page/', contact_page, name='contact_page'),
     path('success_page/', success_page, name='success_page'),
     path('about/', about, name='about'),
