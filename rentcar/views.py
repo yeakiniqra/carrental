@@ -11,6 +11,9 @@ from datetime import datetime
 from django.shortcuts import get_object_or_404
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 
 # Create your views here.
@@ -408,7 +411,33 @@ def listed_car(request, car_id):
     car = get_object_or_404(UploadCar, id=car_id)
     return render(request, 'listedcars.html', {'car': car})
 
+def send_message(request):
+    if request.method == 'POST':
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        phone_number = request.POST.get('phone_number')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
 
+        
+        email_message = f"Name: {first_name} {last_name}\nPhone Number: {phone_number}\nEmail: {email}\nMessage: {message}"
+
+        try:
+            
+            send_mail(
+                subject='New Message from Contact Form',
+                message=email_message,
+                from_email=email,  
+                recipient_list=[settings.EMAIL_HOST_USER],  
+                fail_silently=False,
+            )
+            
+            return redirect('success_page')  
+        except Exception as e:
+            messages.error(request, 'Failed to send message. Please try again.')
+            return redirect('contact_page') 
+
+    return render(request, 'contact.html')
 
 def contact_page(request):
     return render(request, 'contact.html')
