@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}
+About Us
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <title>About Us</title>
+</head>
+<body>
+    {% block content %}
+    <section class="overflow-hidden mt-20 lg:pt-[120px] lg:pb-[90px] bg-white" id="about">
+        <div class="container mx-auto" >
+           <div class="flex flex-wrap items-center justify-between -mx-4">
+              <div class="w-full px-4 lg:w-6/12">
+                 <div class="flex items-center -mx-3 sm:-mx-4">
+                    <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                       <div class="py-3 sm:py-4">
+                          <img
+                             src="https://images.unsplash.com/photo-1522255272218-7ac5249be344?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                             alt=""
+                             class="w-full rounded-2xl"
+                             />
+                       </div>
+                       <div class="py-3 sm:py-4">
+                          <img
+                             src="https://images.unsplash.com/photo-1499062918700-389fa905494e?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                             alt=""
+                             class="w-full rounded-2xl"
+                             />
+                       </div>
+                    </div>
+                    <div class="w-full px-3 sm:px-4 xl:w-1/2">
+                       <div class="relative z-10 my-4">
+                          <img
+                             src="https://images.unsplash.com/photo-1541570213932-8cd806e3f8f6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                             alt=""
+                             class="w-full rounded-2xl"
+                             />
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
+                 <div class="mt-10 lg:mt-0">
+                    <span class="block mb-4 text-2xl text-gray-700 font-semibold text-primary"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
+                    Why Choose Us
+                    </span>
+                    <h2
+                       class="mb-5 text-3xl font-bold text-gray-900 sm:text-[40px]/[48px]"
+                       style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
+                       Make Our customers happy by giving services.
+                    </h2>
+                    <p class="mb-5 text-base text-body-color dark:text-dark-6"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
+                       It is a long established fact that a reader will be distracted
+                       by the readable content of a page when looking at its layout.
+                       The point of using Lorem Ipsum is that it has a more-or-less.
+                    </p>
+                    <p class="mb-5 text-base text-body-color dark:text-dark-6"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
+                       A domain name is one of the first steps to establishing your
+                       brand. Secure a consistent brand image with a domain name that
+                       matches your business.
+                    </p>
+                    <a
+                       href="#"
+                       class="inline-flex items-center justify-center py-2 text-base font-medium text-center text-white border border-transparent rounded-md px-5 bg-violet-700 hover:bg-opacity-90"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;"
+                       >
+                        Learn More
+                    </a>
+                 </div>
+              </div>
+           </div>
+        </div>
+        </section>
+
+    {% endblock %}
+</body>
+</html>
