@@ -30,7 +30,6 @@
     <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> 
     <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode">
     <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> 
-    <img src="![alt text](image.png)> 
 </p>
 
 <h2>⚙️ Installation</h2>
