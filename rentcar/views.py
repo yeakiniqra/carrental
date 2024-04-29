@@ -8,6 +8,7 @@ from django.contrib.auth import logout as django_logout
 from django.contrib import messages
 from .models import Owner, UploadCar, Booking
 from datetime import datetime
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def home(request):
@@ -266,5 +267,15 @@ def upload_car(request):
             'car_type_choices': car_type_choices,
         }
     return render(request, 'uploadcar.html', context)
+
+def delete_car(request, car_id):
+    car = get_object_or_404(UploadCar, id=car_id)
+    
+    if request.method == 'POST':
+        
+        car.delete()
+        return redirect('upload_car')  
+    
+    return render(request, 'delete_car.html', {'car': car})
 
 
