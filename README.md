@@ -30,7 +30,6 @@
     <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> Django 5.0.4 <br>
     <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode"> VSCode <br>
     <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> HTML 5 <br>
-    <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="Tailwind CSS"> Tailwind CSS
 </p>
 
 <h2>Installation</h2>
@@ -69,6 +68,17 @@
 </ol>
 
 <h2>📸 Screenshots</h2>
+
+
+
+![wheelzy1](https://github.com/yeakiniqra/carrental/assets/108855634/e710f187-d2ce-44c1-84cd-1a50e2f320dc)
+![wheelzy6](https://github.com/yeakiniqra/carrental/assets/108855634/1b3d3612-d0cc-4304-afce-39843ce3817a)
+![wheelzy2](https://github.com/yeakiniqra/carrental/assets/108855634/b0ce1218-d547-471f-8fa6-4a6b7991c6e1)
+![wheelzy3](https://github.com/yeakiniqra/carrental/assets/108855634/c53c8e8e-3f9c-4f55-96ff-97442a2bb5c1)
+![wheelzy4](https://github.com/yeakiniqra/carrental/assets/108855634/39e3a323-b099-4ac8-b0d3-86ea452d475d)
+![wheelzy5](https://github.com/yeakiniqra/carrental/assets/108855634/66eb6b9a-f6fa-44f3-bd0c-09114a720bb9)
+
+
 
 
 
