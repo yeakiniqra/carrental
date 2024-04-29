@@ -296,3 +296,38 @@ def owner_cars(request):
 
         return render(request, 'nowrunning.html', context)
 
+
+
+
+@login_required
+def checkout(request, car_id, location, pickup_date, return_date):
+    car = UploadCar.objects.get(pk=car_id)
+
+    
+    pickup_date_dt = datetime.strptime(pickup_date, '%Y-%m-%dT%H:%M')
+    return_date_dt = datetime.strptime(return_date, '%Y-%m-%dT%H:%M')
+
+    
+    days = (return_date_dt - pickup_date_dt).days
+    total_price = car.PricePerDay * days
+
+    
+    booking = Booking.objects.create(
+        user=request.user,
+        car=car,
+        location=location,
+        pickup_date=pickup_date_dt,
+        return_date=return_date_dt,
+        total_price=total_price,
+    )
+
+    context = {
+        'car_id': car_id,
+        'car': car,
+        'location': location,
+        'pickup_date': pickup_date,
+        'return_date': return_date,
+        'booking': booking,
+    }
+
+    return render(request, 'checkout.html', context)
