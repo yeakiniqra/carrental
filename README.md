@@ -25,20 +25,20 @@
 </ul>
 <hr>
 <h2>Built With</h2>
-<ul>
-    <li><img src="https://img.icons8.com/color/48/000000/python.png"/></li>
-    <li><img src="https://img.icons8.com/color/48/000000/django.png"/></li>
-    <li><img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"/></li>
-    <li><img src="https://img.icons8.com/color/48/000000/html-5.png"/></li>
-    <li><img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="Tailwind CSS"></li>
-</ul>
+<p>
+    <img src="https://img.icons8.com/color/48/000000/python.png" alt="Python"> Python 3.12.3 <br>
+    <img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"> Django 5.0.4 <br>
+    <img src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png" alt="VSCode"> VSCode <br>
+    <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5"> HTML 5 <br>
+    <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="Tailwind CSS"> Tailwind CSS
+</p>
 
 <h2>Installation</h2>
 <ol>
     <li>Clone the repository:</li>
 </ol>
 
-<pre><code>git clone https://github.com/your-username/wheelzy.git</code></pre>
+<pre><code>git clone https://github.com/yeakiniqra/carrental.git</code></pre>
 
 <ol start="2">
     <li>Navigate to the project directory:</li>
@@ -67,6 +67,10 @@
 <ol start="6">
     <li>Access the website at <code>http://localhost:8000</code> in your browser.</li>
 </ol>
+
+<h2>📸 Screenshots</h2>
+
+
 
 
 
