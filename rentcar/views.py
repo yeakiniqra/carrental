@@ -190,5 +190,32 @@ def booking_car(request):
             return render(request, 'bookingcar.html', {'error_message': error_message})
     else:
         return render(request, 'bookingcar.html')
+    
+
+def booking_review(request, car_id, location, pickup_date, return_date):
+    try:
+        
+        car = UploadCar.objects.get(pk=car_id)
+    except UploadCar.DoesNotExist:
+        return redirect('booking_car')  
+
+    
+    pickup_date_dt = datetime.strptime(pickup_date, '%Y-%m-%dT%H:%M')
+    return_date_dt = datetime.strptime(return_date, '%Y-%m-%dT%H:%M')
+
+    
+    days = (return_date_dt - pickup_date_dt).days
+
+    
+    total_price = car.PricePerDay * days
+
+    context = {
+        'car': car,
+        'pickup_date': pickup_date,
+        'return_date': return_date,
+        'location': location,
+        'total_price': total_price,
+    }
+    return render(request, 'booking_review.html', context)
 
 
