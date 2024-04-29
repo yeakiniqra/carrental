@@ -336,3 +336,14 @@ def checkout(request, car_id, location, pickup_date, return_date):
 def listed_car(request, car_id):
     car = get_object_or_404(UploadCar, id=car_id)
     return render(request, 'listedcars.html', {'car': car})
+
+
+
+def contact_page(request):
+    return render(request, 'contact.html')
+
+def success_page(request):
+    return render(request, 'contact.html')
+
+def about(request):
+    return render(request, 'about.html')
