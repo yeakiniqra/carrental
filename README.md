@@ -43,13 +43,15 @@
     <li>Navigate to the project directory:</li>
 </ol>
 
-<pre><code>cd wheelzy</code></pre>
+<pre><code>cd carrental</code></pre>
 
 <ol start="3">
     <li>Install dependencies:</li>
 </ol>
 
 <pre><code>pip install -r requirements.txt</code></pre>
+
+<pre><code>pip install Django</code></pre>
 
 <ol start="4">
     <li>Apply migrations:</li>
