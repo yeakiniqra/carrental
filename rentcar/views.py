@@ -9,8 +9,6 @@ from django.contrib import messages
 from .models import Owner, UploadCar, Booking, ContactMessage
 from django.shortcuts import get_object_or_404
 from datetime import datetime
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
@@ -98,6 +96,10 @@ def ownerlogin(request):
 
     return render(request, 'ownerlogin.html') 
 
+def ownerlogout(request):
+    if 'owner_username' in request.session:
+        del request.session['owner_username']
+    return redirect('home')
 
 def signup(request):
     if request.method == 'POST':
@@ -361,7 +363,6 @@ def checkout(request, car_id, location, pickup_date, return_date):
     return render(request, 'checkout.html', context)
 
 
-def generate_pdf(request, car_id, location, pickup_date, return_date):
     
     car = UploadCar.objects.get(pk=car_id)
 
@@ -411,6 +412,8 @@ def listed_car(request, car_id):
     car = get_object_or_404(UploadCar, id=car_id)
     return render(request, 'listedcars.html', {'car': car})
 
+
+#For working this email go to settings & use your email address & app passwords.
 def send_message(request):
     if request.method == 'POST':
         first_name = request.POST.get('first_name')

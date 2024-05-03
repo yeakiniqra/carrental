@@ -10,6 +10,7 @@ Home
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+   
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -28,11 +29,11 @@ Home
                 </h1>
                 
                 <p class="mt-6 mb-8 text-gray-900 text-lg sm:mb-12" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Get a car wherever & whenever you need it from this website.
-                    <br class="hidden md:inline text-gray-900 lg:hidden">Let’s get Rolling!!!!!!
+                    <br class="hidden md:inline text-gray-900 lg:hidden">Let’s get Rolling!!
                 </p>
                 <div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                    <a href="#" class="px-8 py-3 text-lg font-semibold rounded bg-gray-900 text-gray-200 hover:bg-teal-900" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">GET STARTED</a>
-                    <a href="#" class="px-8 py-3 text-gray-900 text-lg font-semibold border rounded border-teal-900 hover:bg-teal-400" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">SIGN UP NOW</a>
+                    <a href="{% url 'booking_car' %}" class="px-8 py-3 text-lg font-semibold rounded bg-gray-900 text-gray-200 hover:bg-teal-900" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">GET STARTED</a>
+                    <a href="{% url 'login' %}" class="px-8 py-3 text-gray-900 text-lg font-semibold border rounded border-teal-900 hover:bg-teal-400" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">SIGN UP NOW</a>
                 </div>
             </div>
             <div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
@@ -42,75 +43,9 @@ Home
     </section>
     
 
-    <!-- ====== About Section Start -->
-<section class="overflow-hidden mt-20 lg:pt-[120px] lg:pb-[90px] bg-white" id="about">
-<div class="container mx-auto">
-   <div class="flex flex-wrap items-center justify-between -mx-4">
-      <div class="w-full px-4 lg:w-6/12">
-         <div class="flex items-center -mx-3 sm:-mx-4">
-            <div class="w-full px-3 sm:px-4 xl:w-1/2">
-               <div class="py-3 sm:py-4">
-                  <img
-                     src="https://images.unsplash.com/photo-1522255272218-7ac5249be344?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                     alt=""
-                     class="w-full rounded-2xl"
-                     />
-               </div>
-               <div class="py-3 sm:py-4">
-                  <img
-                     src="https://images.unsplash.com/photo-1499062918700-389fa905494e?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                     alt=""
-                     class="w-full rounded-2xl"
-                     />
-               </div>
-            </div>
-            <div class="w-full px-3 sm:px-4 xl:w-1/2">
-               <div class="relative z-10 my-4">
-                  <img
-                     src="https://images.unsplash.com/photo-1541570213932-8cd806e3f8f6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                     alt=""
-                     class="w-full rounded-2xl"
-                     />
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
-         <div class="mt-10 lg:mt-0">
-            <span class="block mb-4 text-2xl text-gray-700 font-semibold text-primary"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
-            Why Choose Us
-            </span>
-            <h2
-               class="mb-5 text-3xl font-bold text-gray-900 sm:text-[40px]/[48px]"
-               style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
-               Make Our customers happy by giving services.
-            </h2>
-            <p class="mb-5 text-base text-body-color dark:text-dark-6"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
-               It is a long established fact that a reader will be distracted
-               by the readable content of a page when looking at its layout.
-               The point of using Lorem Ipsum is that it has a more-or-less.
-            </p>
-            <p class="mb-5 text-base text-body-color dark:text-dark-6"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
-               A domain name is one of the first steps to establishing your
-               brand. Secure a consistent brand image with a domain name that
-               matches your business.
-            </p>
-            <a
-               href="#"
-               class="inline-flex items-center justify-center py-2 text-base font-medium text-center text-white border border-transparent rounded-md px-5 bg-violet-700 hover:bg-opacity-90"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;"
-               >
-                Learn More
-            </a>
-         </div>
-      </div>
-   </div>
-</div>
-</section>
-<!-- ====== About Section End -->
-
 <!-- ====== Team Section Start -->
-<section class="mb-16 mt-0" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
-    <div class="container mx-auto">
+<section class="mb-16 mt-24" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;" >
+    <div class="container mx-auto" >
         <h2 class="text-3xl font-semibold text-gray-800 text-center" >Our Team</h2>
         <p class="mt-4 text-gray-600">We are a team of 3 students from the University of Asia Pacific. We are currently pursuing our Honours in Computer Science. We are passionate about building web applications and we are always looking for new opportunities to learn and grow.</p>
         <div class="flex flex-wrap items-center justify-center gap-6 py-6">
@@ -320,35 +255,40 @@ Home
    <!--Service Section End-->
 
    <!--Contact Section Start-->
-   <div class="flex min-h-screen items-center justify-start bg-white" >
-      <div class="mx-auto w-full max-w-lg">
-        <h1 class="text-4xl font-medium" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Contact us</h1>
-        <p class="mt-3" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Email us at wheelzy@help.com or message us here:</p>
-    
-        <form action="https://api.web3forms.com/submit" method="POST" class="mt-10">
-        
-        <!-- This is a working contact form. 
-             Get your free access key from: https://web3forms.com/  -->
-    
-          <input type="hidden" name="access_key" value="af4145af-594a-4f3f-8e5b-50a9a9d2deec" /> 
-          <div class="grid gap-6 sm:grid-cols-2" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
-            <div class="relative z-0">
-              <input type="text" name="name" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" " />
-              <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">Your name</label>
-            </div>
-            <div class="relative z-0">
-              <input type="text" name="email" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" " />
-              <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">Your email</label>
-            </div>
-            <div class="relative z-0 col-span-2">
-              <textarea name="message" rows="5" class="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" "></textarea>
-              <label class="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm text-gray-500 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-blue-600 peer-focus:dark:text-blue-500">Your message</label>
-            </div>
-          </div>
-          <button type="submit" class="mt-5 rounded-md bg-black px-10 py-2 text-white hover:bg-teal-500"  style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Send Message</button>
-        </form>
+   <div class="bg-[#F2F4FF]" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">
+    <section class="max-w-5xl mx-auto py-10 sm:py-20">
+      <div class="flex items-center justify-center flex-col gap-y-2 py-5">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold">Frequently asked questions</h2>
+        <p class="text-lg font-medium text-slate-700/70">Questions related to Car Renting</p>
       </div>
-    </div>
+      <div class="w-full px-7 md:px-10 xl:px-2 py-4">
+        <div class="mx-auto w-full max-w-5xl border border-slate-400/20 rounded-lg bg-white">
+          <div class="border-b border-[#0A071B]/10">
+            <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-1"><span>What types of Rent plans do you offer?</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class=" mt-1.5 md:mt-0 flex-shrink-0 rotate-180 transform h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-1"
+              style="display: none;">We offer shared renting plans, Solo renting plans, and dedicated driver renting
+              plans.</div>
+          </div>
+          <div class="border-b border-[#0A071B]/10">
+            <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-2"><span>What is the uptime guarantee for your Renting services?</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class=" mt-1.5 md:mt-0 flex-shrink-0  h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-2"
+              style="display: none;">We guarantee an uptime of 99.9% for all our renting services.</div>
+          </div>
+          <div class="border-b border-[#0A071B]/10">
+            <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-3"><span>Do you provide Driver for Assistane?</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class=" mt-1.5 md:mt-0 flex-shrink-0  h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-3"
+              style="display: none;">Yes, we offer drivers assistance for new customers.But its not comes free.</div>
+          </div>
+          <div class="">
+            <button class="question-btn flex w-full items-start gap-x-5 justify-between rounded-lg text-left text-lg font-bold text-slate-800 focus:outline-none p-5" data-toggle="answer-4"><span>What security measures do you have in place?</span><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class=" mt-1.5 md:mt-0 flex-shrink-0  h-5 w-5 text-[#5B5675]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+            <div class="answer pt-2 pb-5 px-5 text-sm lg:text-base text-[#343E3A] font-medium" id="answer-4"
+              style="display: none;">We employ advanced security measures including firewalls, DDoS protection, and
+              regular security audits.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
       <!--Contact Section End-->
 
@@ -467,6 +407,28 @@ Home
   
   </div>
 <!-- Footer Section End -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const buttons = document.querySelectorAll('.question-btn');
+  
+      buttons.forEach(button => {
+        button.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-toggle');
+          const target = document.getElementById(targetId);
+          const isExpanded = target.style.display === 'block';
+  
+          if (isExpanded) {
+            target.style.display = 'none';
+            this.querySelector('svg').classList.remove('rotate-180');
+          } else {
+            target.style.display = 'block';
+            this.querySelector('svg').classList.add('rotate-180');
+          }
+        });
+      });
+    });
+  </script>
+
 {% endblock %}
      
 </body>

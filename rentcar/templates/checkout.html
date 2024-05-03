@@ -100,20 +100,12 @@ CheckOut
                       <label for="terms" class="ml-4 text-blue-800 cursor-pointer">I agree to the terms and conditions with all the privacy policy given by wheelzy.</label>
                   </div>
                   <div class="flex flex-wrap justify-end">
-                   <a id="checkoutBtn" href="{% url 'generate_pdf' car_id=car.id location=location pickup_date=pickup_date return_date=return_date %}" class="px-8 py-4 text-lg bg-gray-900 text-white rounded-md hover:bg-gray-700">CheckOut</a>
+                   <a id="checkoutBtn" href="/" class="px-8 py-4 text-lg bg-gray-900 text-white rounded-md hover:bg-gray-700">CheckOut</a>
                   </div>
               </div>
               
             </div>
           </div>
-
-          <script>
-            document.getElementById("checkoutBtn").addEventListener("click", function() {
-                setTimeout(function() {
-                    window.location.href = "/"; 
-                }, 2000); 
-            });
-            </script>
 
     {% endblock %}
 </body>

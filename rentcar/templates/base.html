@@ -13,7 +13,7 @@
 </head>
 <body>
     
-    <div class="sticky top-0 z-50 bg-gray-100 font-sans w-full m-0">
+    <div class="sticky top-0 z-50 bg-gray-100 font-sans w-full m-0 shadow-lg">
         <div class="bg-white shadow-lg">
         <div class="container mx-auto px-4">
           <div class="flex items-center justify-between py-4">
@@ -25,7 +25,8 @@
             
     
             <div class="hidden sm:flex sm:items-center">
-                <a href="#" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
+               
+                <a href="{% url 'owner_profile' %}" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
                     <span>Become a Renter</span>
                     <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
                 </a>
@@ -44,11 +45,11 @@
     </span>
 {% endif %}
 
-                <a href="#" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
+                <a href="{% url 'about' %}" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 mr-6 group">
                     <span>About</span>
                     <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
                 </a>
-                <a href="#" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 group">
+                <a href="{% url 'send_message' %}" class="text-gray-800 text-sm font-semibold relative hover:text-purple-600 group">
                     <span>Contact</span>
                     <span class="absolute inset-x-0 bottom-0 h-0.5 bg-purple-600 transition-all duration-300 origin-bottom transform scale-x-0 group-hover:scale-x-100"></span>
                 </a>
@@ -74,17 +75,17 @@
             <!-- Modal -->
             <div id="signup-modal" class="hidden fixed z-10 shadow-lg inset-0 overflow-y-auto backdrop-blur">
                 <div class="flex items-center justify-center min-h-screen">
-                    <div class="bg-white w-full max-w-md p-6 rounded-lg shadow-lg relative"> <!-- Set the container as relative -->
-                        <button id="close-modal-btn" class="absolute top-0 right-0 mr-4 mt-4 text-gray-600 hover:text-gray-800 focus:outline-none">
+                    <div class="bg-gray-900 w-full max-w-md p-6 rounded-lg shadow-lg relative text-white">
+                        <button id="close-modal-btn" class="absolute top-0 right-0 mr-4 mt-4 text-gray-300 hover:text-gray-400 focus:outline-none">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
                         <h2 class="text-lg font-semibold mb-4" style="font-family: 'Space Grotesk', sans-serif; font-optical-sizing: auto;">Sign up as:</h2>
-                        <button id="signup-user-btn" class="block w-full text-left border-b py-2 font-semibold flex items-center justify-start hover:bg-gray-100">
+                        <button id="signup-user-btn" class="block w-full text-left border-b py-2 font-semibold flex items-center justify-start hover:bg-gray-800">
                             <i class="ri-user-line text-lg mr-2"></i> Sign Up as User
                         </button>
-                        <button id="signup-owner-btn" class="block w-full text-left py-2 font-semibold flex items-center justify-start hover:bg-gray-100">
+                        <button id="signup-owner-btn" class="block w-full text-left py-2 font-semibold flex items-center justify-start hover:bg-gray-800">
                             <i class="ri-user-settings-line text-lg mr-2"></i>  Sign Up as Owner
                         </button>
                     </div>
